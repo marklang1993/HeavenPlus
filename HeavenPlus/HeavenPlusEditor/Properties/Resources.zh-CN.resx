@@ -118,15 +118,15 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Msg0" xml:space="preserve">
-    <value>This will discard the current project, continue?</value>
+    <value>这将会丢弃现在的工程，是否继续？</value>
   </data>
   <data name="Msg_Error" xml:space="preserve">
-    <value>Error</value>
+    <value>错误</value>
   </data>
   <data name="Msg_Info" xml:space="preserve">
-    <value>Information</value>
+    <value>提示</value>
   </data>
   <data name="Msg_Warning" xml:space="preserve">
-    <value>Warning</value>
+    <value>警告</value>
   </data>
 </root>
