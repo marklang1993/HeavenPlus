@@ -51,6 +51,10 @@
     <Compile Include="Explorer\ObjectExplorer.Designer.cs">
       <DependentUpon>ObjectExplorer.cs</DependentUpon>
     </Compile>
+    <Compile Include="GameObject\GameObject.cs" />
+    <Compile Include="GameObject\ItemObject\IItem.cs" />
+    <Compile Include="GameObject\ItemObject\ItemObject.cs" />
+    <Compile Include="GameObject\ItemObject\OEquipment.cs" />
     <Compile Include="HeavenPlusEditorProject.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -94,7 +98,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="GameObject\" />
+    <Folder Include="GameObject\CharacterObject\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
