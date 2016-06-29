@@ -52,7 +52,7 @@ namespace HeavenPlusEditor.GameObject.ItemObject
         public void Use(params GameObject[] gameObjects)
         {
             // Equip this equipment
-            if (_useable)
+            if (Useable)
             {
                 
             }
@@ -61,7 +61,7 @@ namespace HeavenPlusEditor.GameObject.ItemObject
         public void Discard(params GameObject[] gameObjects)
         {
             // Discard this equipment
-            if (_disposable)
+            if (Disposable)
             {
                 
             }

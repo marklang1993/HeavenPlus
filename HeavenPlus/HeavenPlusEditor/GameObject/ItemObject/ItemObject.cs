@@ -8,9 +8,9 @@ namespace HeavenPlusEditor.GameObject.ItemObject
 {
     public abstract class ItemObject : GameObject
     {
-        protected int _value;       // Value of this Item
-        protected bool _disposable; // Whether this item can be discarded or not
-        protected bool _useable;    // Whether this item can be used or not
+        protected int Value;       // Value of this Item
+        protected bool Disposable; // Whether this item can be discarded or not
+        protected bool Useable;    // Whether this item can be used or not
 
         /// <summary>
         /// Item constuctor
