@@ -61,6 +61,15 @@ namespace HeavenPlusEditor.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Unrecognized data member in OEquipment Class\n Name:.
+        /// </summary>
+        internal static string ExceptionMsg0 {
+            get {
+                return ResourceManager.GetString("ExceptionMsg0", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Error.
         /// </summary>
         internal static string Msg_Error {
@@ -93,6 +102,24 @@ namespace HeavenPlusEditor.Properties {
         internal static string Msg0 {
             get {
                 return ResourceManager.GetString("Msg0", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Field.
+        /// </summary>
+        internal static string ObjectExplorer0 {
+            get {
+                return ResourceManager.GetString("ObjectExplorer0", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Value.
+        /// </summary>
+        internal static string ObjectExplorer1 {
+            get {
+                return ResourceManager.GetString("ObjectExplorer1", resourceCulture);
             }
         }
     }

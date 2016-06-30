@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ExceptionMsg0" xml:space="preserve">
+    <value>Unrecognized data member in OEquipment Class\n Name:</value>
+  </data>
   <data name="Msg0" xml:space="preserve">
     <value>This will discard the current project, continue?</value>
   </data>
@@ -128,5 +131,11 @@
   </data>
   <data name="Msg_Warning" xml:space="preserve">
     <value>Warning</value>
+  </data>
+  <data name="ObjectExplorer0" xml:space="preserve">
+    <value>Field</value>
+  </data>
+  <data name="ObjectExplorer1" xml:space="preserve">
+    <value>Value</value>
   </data>
 </root>

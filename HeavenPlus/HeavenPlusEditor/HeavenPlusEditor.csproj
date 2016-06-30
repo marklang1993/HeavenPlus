@@ -52,7 +52,6 @@
       <DependentUpon>ObjectExplorer.cs</DependentUpon>
     </Compile>
     <Compile Include="GameObject\GameObject.cs" />
-    <Compile Include="GameObject\ItemObject\IItem.cs" />
     <Compile Include="GameObject\ItemObject\ItemObject.cs" />
     <Compile Include="GameObject\ItemObject\OEquipment.cs" />
     <Compile Include="HeavenPlusEditorProject.cs" />

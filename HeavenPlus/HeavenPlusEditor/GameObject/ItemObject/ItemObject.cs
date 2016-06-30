@@ -20,5 +20,20 @@ namespace HeavenPlusEditor.GameObject.ItemObject
         {
             ;
         }
+
+        /// <summary>
+        /// Use that Item
+        /// </summary>
+        public abstract void Use(params GameObject[] gameObjects);
+
+        /// <summary>
+        /// Discard that Item
+        /// </summary>
+        public abstract void Discard(params GameObject[] gameObjects);
+
+        /// <summary>
+        /// Get that Item
+        /// </summary>
+        public abstract void Get(params GameObject[] gameObjects);
     }
 }

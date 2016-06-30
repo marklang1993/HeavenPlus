@@ -19,37 +19,42 @@ namespace HeavenPlusEditor.GameObject.ItemObject
         Accessary = 16      // Rings, Ear rings, Pendant...
     }
 
-    public struct EquipmentAttributes
+    public class OEquipment : ItemObject
     {
+        private EquipmentType _type;    // Type of this Equipment
+
+        // Attributes of this Equipments
         // Basic attributes
-        public int PhysicalDamage;    // Physical Damage
-        public int MagicDamage;       // Magic Damage
-        public int PhysicalDefence;   // Defensive Power for Physical Damage
-        public int MagicDefence;      // Defensive Power for Magic Damage
-
+        private int _physicalDamage;    // Physical Damage
+        private int _magicDamage;       // Magic Damage
+        private int _physicalDefence;   // Defensive Power for Physical Damage
+        private int _magicDefence;      // Defensive Power for Magic Damage
         // Extensive attributes
-        public int Power;
-        public int Wisdom;
-        public int Agility;
-        public int Luck;
-    }
-
-    public class OEquipment : ItemObject, IItem
-    {
-        private EquipmentType _type;                // Type of this Equipment
-        private EquipmentAttributes _attributes;    // Attributes of this Equipments
+        private int _power;
+        private int _wisdom;
+        private int _agility;
+        private int _luck;
         
         /// <summary>
         /// Equipment constuctor
+        /// However, the modification for its fields is only done by using Reflection
         /// </summary>
         /// <param name="name">Name of this Equipment Object</param>
-        public OEquipment(string name, EquipmentType type, EquipmentAttributes attributes) : base(name)
+        public OEquipment(string name) : base(name)
         {
             // Initialization
-            _type = type;
-            _attributes = attributes;
+            _type = EquipmentType.Undefine;
+
+            _physicalDamage = 0;
+            _magicDamage = 0;
+            _physicalDefence = 0;
+            _magicDefence = 0;
+            _power = 0;
+            _wisdom = 0;
+            _agility = 0;
+            _luck = 0;
         }
-        public void Use(params GameObject[] gameObjects)
+        public override void Use(params GameObject[] gameObjects)
         {
             // Equip this equipment
             if (Useable)
@@ -58,7 +63,7 @@ namespace HeavenPlusEditor.GameObject.ItemObject
             }
         }
 
-        public void Discard(params GameObject[] gameObjects)
+        public override void Discard(params GameObject[] gameObjects)
         {
             // Discard this equipment
             if (Disposable)
@@ -67,7 +72,7 @@ namespace HeavenPlusEditor.GameObject.ItemObject
             }
         }
 
-        public void Get(params GameObject[] gameObjects)
+        public override void Get(params GameObject[] gameObjects)
         {
             // Get this equipment
         }
