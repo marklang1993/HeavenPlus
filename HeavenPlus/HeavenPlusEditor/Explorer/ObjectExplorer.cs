@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using HeavenPlusEditor.GameObject.ItemObject;
+using HeavenPlusEditor.GameObject.ScriptObject;
 
 namespace HeavenPlusEditor.Explorer
 {
@@ -24,36 +25,8 @@ namespace HeavenPlusEditor.Explorer
         private void ObjectExplorer_Load(object sender, EventArgs e)
         {
             _initEquipmentTab();
-        }
-        
-        /// <summary>
-        /// Get a List of FieldInfo of GameObject
-        /// </summary>
-        /// <returns></returns>
-        private List<FieldInfo> _getMemberGameObject()
-        {
-            return _getFieldInfo(typeof(GameObject.GameObject), false);
-        }
-
-        /// <summary>
-        /// Get a List of FieldInfo of ItemObject
-        /// </summary>
-        /// <returns></returns>
-        private List<FieldInfo> _getMemberItemObject()
-        {
-            return _getFieldInfo(typeof(ItemObject), false);
-        }
-
-        /// <summary>
-        /// Get FieldInfo of OEquipment
-        /// </summary>
-        /// <returns></returns>
-        private List<FieldInfo> _getMemberOEquipment()
-        {
-            List<FieldInfo> equipmentObject_FieldInfo = _getFieldInfo(typeof(OEquipment), false);
-
-            return equipmentObject_FieldInfo;
-        }
+            _initArticleTab();
+        }  
 
         /// <summary>
         /// Initialize DataGridView in EquipmentTab
@@ -61,9 +34,9 @@ namespace HeavenPlusEditor.Explorer
         private void _initEquipmentTab()
         {
             // Get the each information of OEquipment
-            List<FieldInfo> gameObject_FieldInfo = _getMemberGameObject();
-            List<FieldInfo> itemObject_FieldInfo = _getMemberItemObject();
-            List<FieldInfo> equipment_FieldInfo = _getMemberOEquipment();
+            List<FieldInfo> gameObject_FieldInfo = _getFieldInfo(typeof(GameObject.GameObject), false);
+            List<FieldInfo> itemObject_FieldInfo = _getFieldInfo(typeof(ItemObject), false);
+            List<FieldInfo> equipment_FieldInfo = _getFieldInfo(typeof(OEquipment), false);
 
             // Compose
             List<FieldInfo> OEquipment_FieldInfo =
@@ -72,6 +45,25 @@ namespace HeavenPlusEditor.Explorer
                     .ToList();
 
             _setDataGridView(DataGridView_Equipment, OEquipment_FieldInfo);
+        }
+
+        /// <summary>
+        /// Initialize DataGridView in EquipmentTab
+        /// </summary>
+        private void _initArticleTab()
+        {
+            // Get the each information of OArticle
+            List<FieldInfo> gameObject_FieldInfo = _getFieldInfo(typeof(GameObject.GameObject), false);
+            List<FieldInfo> itemObject_FieldInfo = _getFieldInfo(typeof(ItemObject), false);
+            List<FieldInfo> article_FieldInfo = _getFieldInfo(typeof(OArticle), false);
+
+            // Compose
+            List<FieldInfo> OArticle_FieldInfo =
+                (gameObject_FieldInfo.Concat(itemObject_FieldInfo)
+                    .Concat(article_FieldInfo))
+                    .ToList();
+
+            _setDataGridView(DataGridView_Article, OArticle_FieldInfo);
         }
 
         //######################################Common Processing Functions######################################
@@ -186,7 +178,7 @@ namespace HeavenPlusEditor.Explorer
                 dgv[0, index].Value = fieldInfo_Name[index];
 
                 // 2. Set proper Cell in valueColumn.
-                if (fieldInfo[index].FieldType.IsEnum)
+                if (fieldInfo[index].FieldType.IsEnum)                      // # Enum
                 {
                     // Enum Type => ComboBox
                     DataGridViewComboBoxCell enumComboxCell = new DataGridViewComboBoxCell();
@@ -205,7 +197,7 @@ namespace HeavenPlusEditor.Explorer
 
                     dgv[1, index] = enumComboxCell;
                 }
-                else if (fieldInfo[index].FieldType == typeof(bool))
+                else if (fieldInfo[index].FieldType == typeof(bool))        // # Boolean
                 {
                     // Bool Type => CheckBox
                     DataGridViewCheckBoxCell boolCheckBoxCell = new DataGridViewCheckBoxCell();
@@ -215,14 +207,14 @@ namespace HeavenPlusEditor.Explorer
 
                     dgv[1, index] = boolCheckBoxCell;
                 }
-                else if (fieldInfo[index].FieldType.IsValueType)
+                else if (fieldInfo[index].FieldType.IsValueType)            // # Numeric Type
                 {
                     // Numeric Type(int, short, byte...) => TextBox (NOT CHANGE)
 
                     // # Set initial value
                     dgv[1, index].Value = 0;
                 }
-                else if (fieldInfo[index].FieldType == typeof(string))
+                else if (fieldInfo[index].FieldType == typeof(string))      // # String
                 {
                     // String Type => TextBox (NOT CHANGE)
 
@@ -231,6 +223,7 @@ namespace HeavenPlusEditor.Explorer
                 }
                 else
                 {
+                    // TODO : Use Button to Pop up Another Window?
                     // Type cannot be processed
                     throw new ArgumentException(Constants.LanguageResourceManager.GetString("ExceptionMsg0") + fieldInfo[index].Name);
                 }  

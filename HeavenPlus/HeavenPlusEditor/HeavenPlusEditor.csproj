@@ -53,7 +53,9 @@
     </Compile>
     <Compile Include="GameObject\GameObject.cs" />
     <Compile Include="GameObject\ItemObject\ItemObject.cs" />
+    <Compile Include="GameObject\ItemObject\OArticle.cs" />
     <Compile Include="GameObject\ItemObject\OEquipment.cs" />
+    <Compile Include="GameObject\ScriptObject\OScript.cs" />
     <Compile Include="HeavenPlusEditorProject.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>

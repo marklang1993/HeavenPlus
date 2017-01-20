@@ -19,6 +19,9 @@ namespace HeavenPlusEditor.GameObject.ItemObject
         Accessary = 16      // Rings, Ear rings, Pendant...
     }
 
+    /// <summary>
+    /// Equipment Object Class
+    /// </summary>
     public class OEquipment : ItemObject
     {
         private EquipmentType _type;    // Type of this Equipment

@@ -50,11 +50,14 @@
             this.BindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.BindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.DataGridView_Article = new System.Windows.Forms.DataGridView();
             this.ObjectExplorer_TabControl.SuspendLayout();
             this.Equipment_ObjectExplorer_TabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_Equipment)).BeginInit();
+            this.Articles_ObjectExplorer_TabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BindingNavigator)).BeginInit();
             this.BindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridView_Article)).BeginInit();
             this.SuspendLayout();
             // 
             // ObjectExplorer_TabControl
@@ -113,6 +116,7 @@
             // 
             // Articles_ObjectExplorer_TabPage
             // 
+            this.Articles_ObjectExplorer_TabPage.Controls.Add(this.DataGridView_Article);
             this.Articles_ObjectExplorer_TabPage.Location = new System.Drawing.Point(4, 22);
             this.Articles_ObjectExplorer_TabPage.Name = "Articles_ObjectExplorer_TabPage";
             this.Articles_ObjectExplorer_TabPage.Padding = new System.Windows.Forms.Padding(3);
@@ -254,6 +258,15 @@
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
+            // DataGridView_Article
+            // 
+            this.DataGridView_Article.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataGridView_Article.Location = new System.Drawing.Point(6, 6);
+            this.DataGridView_Article.Name = "DataGridView_Article";
+            this.DataGridView_Article.RowTemplate.Height = 23;
+            this.DataGridView_Article.Size = new System.Drawing.Size(424, 437);
+            this.DataGridView_Article.TabIndex = 1;
+            // 
             // ObjectExplorer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -269,9 +282,11 @@
             this.ObjectExplorer_TabControl.ResumeLayout(false);
             this.Equipment_ObjectExplorer_TabPage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_Equipment)).EndInit();
+            this.Articles_ObjectExplorer_TabPage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.BindingNavigator)).EndInit();
             this.BindingNavigator.ResumeLayout(false);
             this.BindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridView_Article)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -299,5 +314,6 @@
         private System.Windows.Forms.ToolStripLabel BindingNavigatorCountItem;
         private System.Windows.Forms.ToolStripTextBox BindingNavigatorPositionItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
+        private System.Windows.Forms.DataGridView DataGridView_Article;
     }
 }
